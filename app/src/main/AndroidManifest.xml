@@ -19,28 +19,36 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar"> <!-- Изменили тему здесь! -->
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <activity
             android:name=".DetailActivity"
             android:exported="false" />
 
-        <!-- ДОБАВЬТЕ ЭТУ АКТИВНОСТЬ! -->
         <activity
             android:name=".SectionsListActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" /> <!-- Важно: AppCompat тема! -->
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
 
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"> <!-- Изменили здесь тоже -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AdminActivity" android:exported="false" />
+        <activity android:name=".AdminAddActivity" android:exported="false" />
+        <activity android:name=".RegisterActivity" android:exported="false" />
+
     </application>
 
 </manifest>

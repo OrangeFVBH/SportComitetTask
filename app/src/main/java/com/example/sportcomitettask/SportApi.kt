@@ -2,18 +2,30 @@ package com.example.sportcomitettask
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface SportApi {
+
+    @POST("/api/login")
+    suspend fun login(@Body body: Map<String, String>): LoginResponse
+
+    @POST("/api/register")
+    suspend fun register(@Body body: Map<String, String>): Map<String, String>
+
     @GET("/api/sports")
     suspend fun getSports(): List<String>
 
     @GET("/api/search")
-    suspend fun searchSections(
-        @Query("city") city: String,
-        @Query("sport") sport: String
-    ): List<Section>
+    suspend fun searchSections(@Query("city") city: String, @Query("sport") sport: String): List<Section>
+
+    @POST("/api/admin/add")
+    suspend fun addSection(@Body section: Map<String, String>): Map<String, String>
+
+    @GET("/api/admin/stats")
+    suspend fun getStats(): List<StatItem>
 }
 
 object RetrofitClient {

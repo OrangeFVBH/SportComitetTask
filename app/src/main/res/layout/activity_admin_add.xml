@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добавить новую организацию"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="24dp"
+            android:layout_gravity="center"/>
+
+        <EditText
+            android:id="@+id/etAddOrgName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Название организации"
+            android:inputType="textCapSentences"
+            android:maxLines="1"/>
+
+        <EditText
+            android:id="@+id/etAddLeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="ФИО руководителя (тренера)"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etAddAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Адрес"
+            android:inputType="textPostalAddress"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etAddPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Телефон"
+            android:inputType="phone"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etAddCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Город"
+            android:inputType="text"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etAddSports"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Виды спорта"
+            android:inputType="text"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Пример: Бокс; Футбол; Теннис (через ;)"
+            android:textSize="12sp"
+            android:textColor="#757575"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/etAddSchedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Расписание (Пн-Пт 10:00-18:00)"
+            android:inputType="text"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etAddAgeGroups"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Возрастные группы (от 7 до 18 лет)"
+            android:inputType="text"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"/>
+        <Button
+            android:id="@+id/btnSaveSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Сохранить в базу"
+            android:layout_marginTop="32dp"
+            android:padding="12dp"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -69,4 +69,5 @@ dependencies {
     // Coroutines (для асинхронной работы)
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }

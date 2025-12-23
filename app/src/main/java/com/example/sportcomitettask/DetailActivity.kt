@@ -19,11 +19,13 @@ class DetailActivity : AppCompatActivity() {
         val phone = intent.getStringExtra("PHONE")
         val address = intent.getStringExtra("ADDRESS")
         val schedule = intent.getStringExtra("SCHEDULE")
+        val ageGroups = intent.getStringExtra("AGE_GROUPS")
 
         findViewById<TextView>(R.id.detailOrg).text = org
         findViewById<TextView>(R.id.detailCoach).text = "Тренер/Руководитель:\n$coach"
         findViewById<TextView>(R.id.detailAddress).text = "Адрес: $address\n(Нажмите чтобы открыть карту)"
         findViewById<TextView>(R.id.detailSchedule).text = "Расписание: $schedule"
+        findViewById<TextView>(R.id.detailAgeGroups).text = "Возрастные группы:\n$ageGroups"
 
         // 1. Открытие карт (Бесплатный API через Intent)
         findViewById<TextView>(R.id.detailAddress).setOnClickListener {
@@ -38,6 +40,8 @@ class DetailActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnCall).setOnClickListener {
             showCallConfirmation(phone)
         }
+
+
     }
 
     private fun showCallConfirmation(phone: String?) {

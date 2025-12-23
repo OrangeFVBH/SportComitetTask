@@ -57,6 +57,7 @@ class SectionsListActivity : AppCompatActivity() {
                         intent.putExtra("PHONE", section.phone)
                         intent.putExtra("ADDRESS", section.address)
                         intent.putExtra("SCHEDULE", section.schedule)
+                        intent.putExtra("AGE_GROUPS", section.age_groups)
                         startActivity(intent)
                     }
                     listContainer.addView(card)
