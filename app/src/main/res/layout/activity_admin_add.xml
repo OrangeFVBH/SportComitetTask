@@ -114,8 +114,9 @@
             android:text="Сохранить в базу"
             android:layout_marginTop="32dp"
             android:padding="12dp"
-            android:backgroundTint="@android:color/holo_blue_dark"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_button"/>
 
     </LinearLayout>
 </ScrollView>

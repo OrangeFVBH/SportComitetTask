@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sport Finder"
+        android:text="SPORT COMITET"
         android:textSize="32sp"
         android:textStyle="bold"
         android:textColor="@android:color/holo_blue_dark"
@@ -36,7 +36,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Войти"
-        android:padding="12dp"/>
+        android:padding="12dp"
+        android:background="@drawable/rounded_button"/>
 
     <Button
         android:id="@+id/btnGoToRegister"
@@ -44,7 +45,8 @@
         android:layout_height="wrap_content"
         android:text="Зарегистрироваться"
         android:layout_marginTop="8dp"
-        style="@style/Widget.AppCompat.Button.Borderless"/>
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:background="@drawable/rounded_button"/>
 
     <TextView
         android:layout_width="wrap_content"

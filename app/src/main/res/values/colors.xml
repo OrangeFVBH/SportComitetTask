@@ -7,4 +7,24 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="pie_chart_green_dark">#FF388E3C</color> <!-- Темно-зеленый -->
+    <color name="pie_chart_yellow">#FFFBC02D</color> <!-- Желтый -->
+    <color name="pie_chart_red">#FFD32F2F</color> <!-- Красный -->
+    <color name="pie_chart_blue">#FF1976D2</color> <!-- Синий -->
+    <color name="pie_chart_green_light">#FF66BB6A</color> <!-- Светло-зеленый -->
+    <color name="pie_chart_purple">#FF9C27B0</color> <!-- Фиолетовый -->
+    <color name="pie_chart_orange">#FFFFA726</color> <!-- Оранжевый -->
+    <color name="pie_chart_teal">#FF009688</color> <!-- Бирюзовый -->
+    <color name="pie_chart_pink">#FFE91E63</color> <!-- Розовый -->
+    <color name="pie_chart_indigo">#FF3F51B5</color> <!-- Индиго -->
+    <color name="pie_chart_cyan">#FF00BCD4</color> <!-- Голубой -->
+    <color name="pie_chart_brown">#FF795548</color> <!-- Коричневый -->
+    <color name="pie_chart_grey_light">#FF9E9E9E</color> <!-- Светло-серый -->
+    <color name="pie_chart_deep_orange">#FFFF5722</color> <!-- Глубокий оранжевый -->
+    <color name="pie_chart_light_blue">#FF03A9F4</color> <!-- Светло-синий -->
+    <color name="pie_chart_lime">#FFCDDC39</color> <!-- Лаймовый -->
+    <color name="pie_chart_amber">#FFFFC107</color> <!-- Янтарный -->
+    <color name="pie_chart_deep_purple">#FF673AB7</color> <!-- Глубокий фиолетовый -->
+    <color name="pie_chart_light_green">#FF8BC34A</color> <!-- Светло-зеленый (другой оттенок) -->
+
 </resources>
