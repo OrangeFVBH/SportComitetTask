@@ -22,7 +22,6 @@ class AdminAddActivity : AppCompatActivity() {
     }
 
     private fun saveData() {
-        // Сбор данных из всех полей
         val data = mapOf(
             "org_name" to findViewById<EditText>(R.id.etAddOrgName).text.toString(),
             "leader" to findViewById<EditText>(R.id.etAddLeader).text.toString(),
@@ -31,10 +30,9 @@ class AdminAddActivity : AppCompatActivity() {
             "city" to findViewById<EditText>(R.id.etAddCity).text.toString(),
             "sports" to findViewById<EditText>(R.id.etAddSports).text.toString(),
             "schedule" to findViewById<EditText>(R.id.etAddSchedule).text.toString(),
-            "age_groups" to findViewById<EditText>(R.id.etAddAgeGroups).text.toString() // Важно!
+            "age_groups" to findViewById<EditText>(R.id.etAddAgeGroups).text.toString()
         )
 
-        // Проверка на пустые поля
         if (data.values.any { it.isBlank() }) {
             Toast.makeText(this, "Пожалуйста, заполните все поля", Toast.LENGTH_SHORT).show()
             return
@@ -42,14 +40,18 @@ class AdminAddActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             try {
-                // Отправка на сервер
                 val response = RetrofitClient.api.addSection(data)
+                // Проверяем статус "added"
                 if (response["status"] == "added") {
-                    Toast.makeText(this@AdminAddActivity, "Успешно добавлено!", Toast.LENGTH_SHORT).show()
-                    finish() // Возвращаемся в меню админа
+                    Toast.makeText(this@AdminAddActivity, "Организация добавлена!", Toast.LENGTH_SHORT).show()
+
+                    // ВОЗВРАТ НАЗАД: закрываем текущую активити
+                    finish()
+                } else {
+                    Toast.makeText(this@AdminAddActivity, "Ошибка: ${response["message"]}", Toast.LENGTH_LONG).show()
                 }
             } catch (e: Exception) {
-                Toast.makeText(this@AdminAddActivity, "Ошибка сервера: ${e.message}", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@AdminAddActivity, "Сбой сети: ${e.message}", Toast.LENGTH_LONG).show()
             }
         }
     }

@@ -25,13 +25,19 @@ class AdminStatsActivity : AppCompatActivity() {
         lifecycleScope.launch {
             try {
                 val stats = RetrofitClient.api.getStats()
-                if (stats.isEmpty()) {
-                    Toast.makeText(this@AdminStatsActivity, "Нет данных для статистики", Toast.LENGTH_SHORT).show()
+
+                // ПРОВЕРКА: Если данных нет, не вызываем displayChart
+                if (stats.isNullOrEmpty()) {
+                    Toast.makeText(this@AdminStatsActivity, "Статистика пока пуста", Toast.LENGTH_LONG).show()
+                    // Можно вывести текст "Нет данных" на экран вместо диаграммы
                     return@launch
                 }
+
                 displayChart(stats)
             } catch (e: Exception) {
-                Toast.makeText(this@AdminStatsActivity, "Ошибка загрузки: ${e.message}", Toast.LENGTH_LONG).show()
+                // Если сервер выдал ошибку, приложение не вылетит, а покажет Toast
+                Toast.makeText(this@AdminStatsActivity, "Ошибка сервера: ${e.message}", Toast.LENGTH_LONG).show()
+                e.printStackTrace()
             }
         }
     }
@@ -39,19 +45,21 @@ class AdminStatsActivity : AppCompatActivity() {
     private fun displayChart(stats: List<StatItem>) {
         val pieChart = findViewById<PieChart>(R.id.pieChart)
 
-        // Превращаем данные от сервера в формат диаграммы
-        val entries = stats.map{ PieEntry(it.value, it.label) }
+        // Очищаем старые данные перед отрисовкой новых
+        pieChart.clear()
 
-        val dataSet = PieDataSet(entries, "Виды спорта")
-        dataSet.colors = ColorTemplate.MATERIAL_COLORS.toList()
-        dataSet.valueTextColor = Color.BLACK
-        dataSet.valueTextSize = 14f
+        val entries = stats.map { PieEntry(it.value, it.label) }
+
+        val dataSet = PieDataSet(entries, "Запросы").apply {
+            colors = ColorTemplate.MATERIAL_COLORS.toList()
+            valueTextSize = 14f
+            valueTextColor = Color.BLACK
+        }
 
         val data = PieData(dataSet)
         pieChart.data = data
         pieChart.description.isEnabled = false
-        pieChart.centerText = "Популярность"
-        pieChart.animateY(1000) // Анимация отрисовки
-        pieChart.invalidate()
+        pieChart.animateY(1000)
+        pieChart.invalidate() // Перерисовать
     }
 }
